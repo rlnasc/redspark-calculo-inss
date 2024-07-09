@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
-
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_220234) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "proponents", force: :cascade do |t|
+    t.string "name"
+    t.string "identification_document"
+    t.date "birthdate"
+    t.string "address"
+    t.integer "address_number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "postcode"
+    t.string "personal_phonenumber"
+    t.string "reference_phonenumber"
+    t.decimal "monthly_salary", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

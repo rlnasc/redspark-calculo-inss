@@ -51,6 +51,14 @@ group :development, :test do
 
   # Reduces boot times through caching; required in config/boot.rb
   gem "bootsnap", require: false
+  gem "pry"
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
+  gem "simplecov"
+  gem "factory_bot_rails"
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
