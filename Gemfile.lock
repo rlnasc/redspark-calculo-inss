@@ -313,6 +313,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  byebug
   capybara
   cssbundling-rails
   database_cleaner-active_record
