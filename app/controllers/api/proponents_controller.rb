@@ -10,8 +10,16 @@ class Api::ProponentsController < ApplicationController
     render json: response, status: :bad_request
   end
 
-  def index # TODO adicionar paginacao com ransack
-    render json: Proponent.all
+  def index
+    results = Proponent.page(params[:page])
+    render json: { 
+      proponents: results,
+      total_pages: results.total_pages,
+      current_page: results.current_page,
+      prev_page: results.prev_page,
+      next_page: results.next_page,
+      out_of_range: results.out_of_range?
+    }
   end
 
   def show
